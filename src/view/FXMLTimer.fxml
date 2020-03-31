@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.30434782608695654" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLTimerController">
+  <items>
+      <BorderPane prefHeight="461.0" prefWidth="224.0">
+         <top>
+            <VBox minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" text="TRAINING SESSION">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="group" text="group">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Separator>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="warmingUp" text="warming up">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="actualSerie" text="serie">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="actualEx" text="exercise">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox alignment="CENTER" prefHeight="106.0" prefWidth="225.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="save" minWidth="-Infinity" mnemonicParsing="false" onAction="#onSave" prefWidth="200.0" text="Save session and close">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" size="14" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="delete" minWidth="-Infinity" mnemonicParsing="false" onAction="#onDelete" prefWidth="200.0" text="Delete session and close">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="TIMES" size="14" />
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="menu" minWidth="-Infinity" mnemonicParsing="false" onAction="#onMenu" prefWidth="200.0" text="Back to menu">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BARS" size="16" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+      <BorderPane fx:id="pane" prefHeight="446.0" prefWidth="447.0">
+         <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="80.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="80.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="butStart" mnemonicParsing="false" onAction="#onPlay" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PLAY" size="40" />
+                     </graphic>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="butNext" mnemonicParsing="false" onAction="#onNext" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="ARROW_RIGHT" size="40" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="butReset" mnemonicParsing="false" onAction="#onRestart" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="UNDO" size="40" />
+                     </graphic>
+                  </Button>
+                  <Label text="play" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="next interval" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="reset" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="butStop" layoutX="157.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="PAUSE" size="40" />
+                     </graphic>
+                  </Button>
+                  <Label text="pause" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+         </bottom>
+         <center>
+            <Label fx:id="timer" text="00:00" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="71.0" />
+               </font>
+            </Label>
+         </center>
+         <top>
+            <Label fx:id="info" text="info" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+  </items>
+</SplitPane>
